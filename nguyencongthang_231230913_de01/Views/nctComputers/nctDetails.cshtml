@@ -1,0 +1,42 @@
+﻿@model nguyencongthang_231230913_de01.Models.nctComputer
+
+@{
+    ViewData["Title"] = "nctDetails";
+}
+
+<h1>nctDetails</h1>
+
+<div>
+    <h4>nctComputer</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.nctComName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.nctComName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.nctComPrice)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.nctComPrice)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.nctComImage)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.nctComImage)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.nctComStatus)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.nctComStatus)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-success" asp-action="nctEdit" asp-route-id="@Model?.nctComId">Edit</a> |
+    <a class="btn btn-primary" asp-action="nctIndex">Back to List</a>
+</div>

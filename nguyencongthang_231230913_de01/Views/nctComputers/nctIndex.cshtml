@@ -1,0 +1,60 @@
+﻿@model IEnumerable<nguyencongthang_231230913_de01.Models.nctComputer>
+
+@{
+    ViewData["Title"] = "nctIndex";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="nctCreate">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nctComName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nctComPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nctComImage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nctComStatus)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nctComName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nctComPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nctComImage)
+            </td>
+            <td>
+                @if (item.nctComStatus == true)
+                {
+                    <span class="badge bg-success">Còn hàng</span>
+                }
+                else
+                {
+                    <span class="badge bg-danger">Hết hàng</span>
+                }
+            </td>
+            <td>
+                <a class="btn btn-primary" asp-action="nctEdit" asp-route-id="@item.nctComId">Edit</a> |
+                <a class="btn btn-secondary" asp-action="nctDetails" asp-route-id="@item.nctComId">Details</a> |
+                <a class="btn btn-danger" asp-action="nctDelete" asp-route-id="@item.nctComId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
