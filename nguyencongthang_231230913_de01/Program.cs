@@ -28,6 +28,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=nctIndex}/{nctid?}");
+    pattern: "{controller=Home}/{action=nctIndex}/{id?}");
 
 app.Run();

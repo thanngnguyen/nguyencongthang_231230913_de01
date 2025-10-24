@@ -37,7 +37,8 @@
                 @Html.DisplayFor(modelItem => item.nctComPrice)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.nctComImage)
+                
+                <img width="200px" src="@item.nctComImage" alt="Alternate Text" />
             </td>
             <td>
                 @if (item.nctComStatus == true)
